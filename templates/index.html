@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User API Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        main {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            padding: 12px;
+            background: #e7f5e7;
+            border: 1px solid #c3e6c3;
+            border-radius: 4px;
+            color: #2d662d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FastAPI User Demo </h1>
+    </header>
+    <main>
+        <form action="/form-users" method="post">
+            <label for="username">Create User:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username">
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="/users/1" method="get">
+            <label>Get User with ID 1:</label>
+            <button type="submit">Fetch</button>
+        </form>
+
+        {% if message %}
+        <div class="message">{{ message }}</div>
+        {% endif %}
+    </main>
+</body>
+</html>
